@@ -6,17 +6,8 @@
         "use": "@vercel/node"
         }
     ],
-    "routes": [
-        {
-        "src": "/(.*)",
-        "dest": "server.js",
-        "headers": {
-            "Access-Control-Allow-Origin": "https://siddharth27.myshopify.com",
-            "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
-            "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept, Authorization",
-            "Access-Control-Allow-Credentials": "true"
-        }
-        }
+    "rewrites": [
+        { "source": "/(.*)", "destination": "/server.js" }
     ],
     "headers": [
         {
