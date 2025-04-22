@@ -32,6 +32,10 @@ app.use('/wishlist', wishlistRoutes);
 //     res.send('Welcome to the Swym API Integration Server!');
 // });
 
+app.use('/', (req, res) => {
+    res.send('Welcome to the Swym API Integration Server!');
+});
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
