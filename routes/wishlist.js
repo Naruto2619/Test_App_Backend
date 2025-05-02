@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import syncRegIDFunctions from '../syncRegID.js';
 const { GenerateRegID, SyncRegIDWithEmail } = syncRegIDFunctions;
-import WishlistLogic from '../wishlist-logic.js';
+import WishlistLogic from '../wishlistAPI.js';
 const { fetchWishList,CreateSwymList, UpdateSwymList , MarkListPublic, ShareWishlistViaMail} = WishlistLogic;
 dotenv.config();
 const router = express.Router();

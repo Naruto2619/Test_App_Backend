@@ -1,7 +1,7 @@
 import axios from 'axios';
 import dotenv from 'dotenv'; 
 import { v4 as uuidv4 } from 'uuid';
-import WishlistLogic from './wishlist-logic.js';
+import WishlistLogic from './wishlistAPI.js';
 const { fetchWishList, UpdateSwymList} = WishlistLogic;
 
 dotenv.config();
