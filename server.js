@@ -11,18 +11,26 @@ import wishlistRoutes from './routes/wishlist.js';
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// app.use(cors({
-//     origin: ['*'],
-//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
-//     credentials: true,
-//     maxAge: 86400 // Cache preflight requests for 24 hours
-// }));
-
+app.use(cors({
+    origin: 'https://siddharth27.myshopify.com', 
+    credentials: true
+}));
+app.use(session({
+    secret: 'super-secret',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: false,        
+      sameSite: 'lax' 
+    }
+}));
 app.use(bodyParser.json());
 
 // Routes
 app.use('/wishlist', wishlistRoutes);
+// app.use('/', (req, res) => {
+//     res.send('Welcome to the Swym API Integration Server!');
+// });
 
 app.use('/', (req, res) => {
     res.send('Welcome to the Swym API Integration Server!');
