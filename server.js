@@ -11,23 +11,14 @@ import wishlistRoutes from './routes/wishlist.js';
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({
-    origin: ['*'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
-    credentials: true,
-    maxAge: 86400 // Cache preflight requests for 24 hours
-}));
+// app.use(cors({
+//     origin: ['*'],
+//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
+//     credentials: true,
+//     maxAge: 86400 // Cache preflight requests for 24 hours
+// }));
 
-app.use(session({
-    secret: 'super-secret',
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      secure: process.env.NODE_ENV === 'production',  // Secure in production
-      sameSite: 'none'  // Required for cross-site cookies in production
-    }
-}));
 app.use(bodyParser.json());
 
 // Routes
